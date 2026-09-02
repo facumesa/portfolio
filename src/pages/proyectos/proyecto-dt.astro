@@ -5,7 +5,7 @@ import '../../styles/global.css';
 
 const funcionalidades = [
   "Creación de entrenador y carreras locales independientes",
-  "Gestón de plantel, formaciones, roles e instrucciones tácticas",
+  "Gestión de plantel, formaciones, roles e instrucciones tácticas",
   "Calendario, temporadas, competiciones, lesiones y disciplina",
   "Partidos con relato, estadísticas y ajustes tácticos en vivo",
   "Economía, contratos, negociaciones y mercado de transferencias",
@@ -35,41 +35,39 @@ const capturas = [
       }
     </style>
   </head>
-  <body class="min-h-screen bg-neutral-950 text-neutral-100 font-sans selection:bg-indigo-500/30">
-    <div class="fixed inset-x-0 top-0 h-96 bg-gradient-to-b from-indigo-600/15 via-violet-600/5 to-transparent pointer-events-none"></div>
-
-    <main class="relative max-w-4xl mx-auto px-6 sm:px-10 py-12 sm:py-20">
+  <body class="min-h-screen text-neutral-100 font-sans">
+    <main class="relative max-w-6xl mx-auto px-4 sm:px-8 py-8 sm:py-14">
       <a href="/" class="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors mb-16">
         <span aria-hidden="true">←</span>
         Volver al portfolio
       </a>
 
-      <header class="space-y-8 pb-16 border-b border-neutral-800">
-        <div class="flex flex-wrap gap-3">
-          <span class="px-3 py-1.5 rounded-full border border-violet-500/30 bg-violet-500/10 text-xs font-mono text-violet-300">
+      <header class="grid lg:grid-cols-[220px_1fr] gap-10 py-16 sm:py-24 border-y border-white/10">
+        <div class="flex lg:flex-col flex-wrap gap-3 content-start">
+          <span class="px-3 py-1.5 border border-violet-500/30 bg-violet-500/10 text-xs font-mono text-violet-300">
             Proyecto personal con IA
           </span>
-          <span class="px-3 py-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 text-xs font-mono text-amber-300">
+          <span class="px-3 py-1.5 border border-amber-500/30 bg-amber-500/10 text-xs font-mono text-amber-300">
             En desarrollo
           </span>
-          <span class="px-3 py-1.5 rounded-full border border-neutral-700 bg-neutral-900 text-xs font-mono text-neutral-400">
+          <span class="px-3 py-1.5 border border-white/15 bg-[#0c0f0d] text-xs font-mono text-neutral-400">
             Repositorio privado
           </span>
         </div>
 
         <div>
-          <p class="font-mono text-sm text-indigo-300 mb-4">CASO DE ESTUDIO</p>
-          <h1 class="text-5xl sm:text-7xl font-black tracking-tight text-white">Proyecto DT</h1>
+          <p class="font-mono text-sm text-lime-300 mb-4">CASO DE ESTUDIO</p>
+          <h1 class="text-6xl sm:text-8xl font-black uppercase tracking-[-0.06em] text-white">Proyecto DT</h1>
           <p class="text-xl sm:text-2xl text-neutral-500 mt-3">Nombre por definir</p>
         </div>
 
-        <p class="text-xl sm:text-2xl leading-relaxed font-light text-neutral-300 max-w-3xl">
+        <p class="lg:col-start-2 text-xl sm:text-2xl leading-relaxed font-light text-neutral-300 max-w-3xl">
           Un modo carrera de director técnico para navegador, pensado para desarrollar una trayectoria de varias temporadas dentro de un mundo futbolístico persistente.
         </p>
       </header>
 
-      <div class="py-16 space-y-20">
-        <section class="grid md:grid-cols-[1fr_2fr] gap-8">
+      <div class="py-16 space-y-24">
+        <section class="grid md:grid-cols-[220px_1fr] gap-8">
           <h2 class="text-sm font-mono uppercase tracking-widest text-neutral-500">Transparencia</h2>
           <div class="space-y-5 text-lg leading-relaxed text-neutral-300 font-light">
             <p>
@@ -81,7 +79,7 @@ const capturas = [
           </div>
         </section>
 
-        <section class="grid md:grid-cols-[1fr_2fr] gap-8">
+        <section class="grid md:grid-cols-[220px_1fr] gap-8 border-t border-white/10 pt-10">
           <h2 class="text-sm font-mono uppercase tracking-widest text-neutral-500">La idea</h2>
           <div class="space-y-5 text-lg leading-relaxed text-neutral-300 font-light">
             <p>
@@ -94,14 +92,14 @@ const capturas = [
         </section>
 
         <section>
-          <div class="flex items-end justify-between gap-4 pb-5 border-b border-neutral-800 mb-8">
+          <div class="flex items-end justify-between gap-4 pb-5 border-b border-white/10 mb-8">
             <h2 class="text-3xl font-bold text-white">Alcance actual</h2>
             <span class="text-xs font-mono text-neutral-600">PROTOTIPO JUGABLE</span>
           </div>
-          <ul class="grid sm:grid-cols-2 gap-4">
+          <ul class="grid sm:grid-cols-2 border border-white/10">
             {funcionalidades.map((funcionalidad) => (
-              <li class="p-5 rounded-2xl border border-neutral-800 bg-neutral-900/60 text-neutral-300 leading-relaxed">
-                <span class="block w-2 h-2 rounded-full bg-indigo-400 mb-4"></span>
+              <li class="p-6 border border-white/10 -m-px bg-[#0c0f0d] text-neutral-300 leading-relaxed">
+                <span class="block w-2 h-2 bg-lime-300 mb-4"></span>
                 {funcionalidad}
               </li>
             ))}
@@ -109,7 +107,7 @@ const capturas = [
         </section>
 
         <section>
-          <div class="flex items-end justify-between gap-4 pb-5 border-b border-neutral-800 mb-8">
+          <div class="flex items-end justify-between gap-4 pb-5 border-b border-white/10 mb-8">
             <div>
               <p class="text-xs font-mono uppercase tracking-widest text-neutral-500 mb-3">Vista del proyecto</p>
               <h2 class="text-3xl font-bold text-white">Del vestuario a la cancha</h2>
@@ -120,11 +118,11 @@ const capturas = [
           <ImageCarousel images={capturas} />
         </section>
 
-        <section class="rounded-3xl border border-neutral-800 bg-neutral-900/50 p-8 sm:p-10">
+        <section class="border border-white/10 bg-[#0c0f0d] p-8 sm:p-10">
           <p class="text-sm font-mono uppercase tracking-widest text-neutral-500 mb-5">Tecnologías utilizadas</p>
           <div class="flex flex-wrap gap-3">
             {tecnologias.map((tecnologia) => (
-              <span class="px-4 py-2 rounded-xl border border-neutral-700 bg-neutral-950 text-sm font-mono text-neutral-300">
+              <span class="px-4 py-2 border border-white/15 bg-neutral-950 text-sm font-mono text-neutral-300">
                 {tecnologia}
               </span>
             ))}
@@ -134,11 +132,11 @@ const capturas = [
           </p>
         </section>
 
-        <section class="grid md:grid-cols-[1fr_2fr] gap-8">
+        <section class="grid md:grid-cols-[220px_1fr] gap-8 border-t border-white/10 pt-10">
           <h2 class="text-sm font-mono uppercase tracking-widest text-neutral-500">Estado y acceso</h2>
           <div class="space-y-5 text-lg leading-relaxed text-neutral-300 font-light">
             <p>
-              Actualmente se ejecuta de forma local mediante <code class="px-2 py-1 rounded bg-neutral-900 text-sm font-mono text-indigo-300">npm run dev</code>. No dispone de una demo pública y el repositorio se mantiene privado.
+              Actualmente se ejecuta de forma local mediante <code class="px-2 py-1 rounded bg-[#0c0f0d] text-sm font-mono text-lime-300">npm run dev</code>. No dispone de una demo pública y el repositorio se mantiene privado.
             </p>
             <p>
               Esta decisión permite evitar la redistribución directa de datos, imágenes y marcas de terceros incluidos durante el desarrollo, y mantener reservado un código experimental que todavía cambia con frecuencia. El proyecto puede mostrarse y probarse de forma coordinada al solicitarlo.
@@ -149,13 +147,13 @@ const capturas = [
           </div>
         </section>
 
-        <section class="rounded-3xl border border-indigo-500/30 bg-gradient-to-br from-indigo-500/15 via-neutral-900 to-neutral-900 p-8 sm:p-10">
-          <p class="text-sm font-mono uppercase tracking-widest text-indigo-300 mb-4">Disponible para mostrar</p>
+        <section class="border border-lime-300/40 bg-lime-300/[0.04] p-8 sm:p-12">
+          <p class="text-sm font-mono uppercase tracking-widest text-lime-300 mb-4">Disponible para mostrar</p>
           <h2 class="text-3xl sm:text-4xl font-bold text-white mb-5">¿Querés verlo funcionando?</h2>
           <p class="text-lg text-neutral-300 font-light leading-relaxed max-w-2xl mb-8">
             Aunque el repositorio y la demo no son públicos, puedo mostrar el proyecto en funcionamiento, explicar el proceso de creación y compartir más detalles a quien tenga interés.
           </p>
-          <a href="https://www.linkedin.com/in/facundomesati/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white text-neutral-950 font-bold hover:bg-neutral-200 transition-colors">
+          <a href="https://www.linkedin.com/in/facundomesati/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-6 py-3.5 bg-lime-300 text-black font-bold hover:bg-neutral-200 transition-colors">
             Contactarme por LinkedIn
             <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" class="w-4 h-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
               <path d="M6 14 14 6M8 6h6v6" />
@@ -164,7 +162,7 @@ const capturas = [
         </section>
       </div>
 
-      <footer class="pt-10 border-t border-neutral-800 flex flex-col sm:flex-row justify-between gap-4 text-sm font-mono text-neutral-500">
+      <footer class="pt-10 border-t border-white/10 flex flex-col sm:flex-row justify-between gap-4 text-sm font-mono text-neutral-500">
         <span>© 2026 Facundo Mesa</span>
         <a href="/" class="hover:text-white transition-colors">Volver al portfolio ↑</a>
       </footer>

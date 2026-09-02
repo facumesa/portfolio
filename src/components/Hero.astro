@@ -1,23 +1,34 @@
-<header class="sticky top-0 h-screen flex flex-col justify-center space-y-8 sticky-hero z-0">
-  <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pb-6 border-b border-neutral-800/80">
-    <div class="space-y-3 min-w-0 w-full sm:w-auto">
-      <div class="inline-flex max-w-full items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-900/90 border border-neutral-800 text-[0.65rem] sm:text-xs font-mono text-neutral-300 backdrop-blur-md">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
-        <span>Disponible para proyectos & roles backend / full-stack</span>
-      </div>
-      <h1 class="text-5xl sm:text-8xl font-black tracking-tight text-white">Facundo Mesa</h1>
-      <p class="text-2xl sm:text-3xl font-light text-neutral-400">Backend Developer & AI-Assisted Engineer</p>
+<header class="min-h-[92vh] flex flex-col border-x border-white/10">
+  <nav class="h-16 px-5 sm:px-8 flex items-center justify-between border-b border-white/10 font-mono text-xs uppercase tracking-[0.18em]">
+    <a href="/" class="text-white font-bold">FM<span class="text-lime-300">.</span></a>
+    <div class="flex items-center gap-5 sm:gap-8 text-neutral-500">
+      <a href="#sobre-mi" class="hover:text-lime-300 transition-colors">Perfil</a>
+      <a href="#proyectos-destacados" class="hover:text-lime-300 transition-colors">Trabajo</a>
+      <a href="mailto:facundomesababon@gmail.com" class="hidden sm:inline hover:text-lime-300 transition-colors">Contacto</a>
     </div>
-    <div class="w-28 h-28 sm:w-36 sm:h-36 rounded-3xl bg-gradient-to-br from-neutral-800 to-neutral-900 border border-neutral-700/80 flex items-center justify-center text-4xl sm:text-5xl font-black text-white shadow-2xl shrink-0">FM</div>
-  </div>
-  <p class="text-xl sm:text-2xl text-neutral-300 font-light leading-relaxed max-w-3xl">
-    Especializado en la creación de <strong class="text-white font-semibold">APIs REST distribuidas</strong>, arquitectura limpia en <strong class="text-white font-semibold">.NET y Java</strong>, e integración de IA.
-  </p>
-  <div class="flex flex-wrap items-center gap-4 pt-4">
-    <a href="#proyectos-destacados" class="px-6 py-3.5 rounded-xl bg-white text-neutral-950 font-bold hover:bg-neutral-200 transition-all duration-200 shadow-xl shadow-white/5">Ver Proyectos ↓</a>
-    <a href="#sobre-mi" class="px-6 py-3.5 rounded-xl bg-neutral-900/80 text-neutral-200 border border-neutral-800 hover:border-neutral-600 transition-all duration-200">Sobre mí</a>
-    <a href="https://github.com/facumesa" target="_blank" rel="noreferrer" class="px-6 py-3.5 rounded-xl bg-neutral-900/80 text-neutral-200 border border-neutral-800 hover:border-neutral-600 transition-all duration-200">GitHub ↗</a>
-    <a href="https://www.linkedin.com/in/facundomesati/" target="_blank" rel="noreferrer" class="px-6 py-3.5 rounded-xl bg-neutral-900/80 text-neutral-200 border border-neutral-800 hover:border-neutral-600 transition-all duration-200">LinkedIn ↗</a>
-    <a href="mailto:facundomesababon@gmail.com" class="px-6 py-3.5 rounded-xl bg-neutral-900/80 text-neutral-200 border border-neutral-800 hover:border-neutral-600 transition-all duration-200">Contacto</a>
+  </nav>
+  <div class="flex-1 grid lg:grid-cols-[1fr_280px]">
+    <div class="px-5 sm:px-8 py-16 sm:py-24 flex flex-col justify-between gap-20">
+      <div class="flex items-center gap-3 font-mono text-[0.65rem] sm:text-xs uppercase tracking-[0.16em] text-neutral-400">
+        <span class="w-2 h-2 bg-lime-300"></span>
+        Disponible para roles backend / full-stack
+      </div>
+      <div>
+        <p class="font-mono text-xs sm:text-sm uppercase tracking-[0.24em] text-lime-300 mb-6">Programador de aplicaciones</p>
+        <h1 class="text-[clamp(4rem,12vw,9rem)] leading-[0.82] font-black uppercase tracking-[-0.075em] text-white">Facundo<br /><span class="text-outline">Mesa</span></h1>
+      </div>
+      <div class="grid md:grid-cols-[1fr_auto] gap-8 items-end border-t border-white/10 pt-8">
+        <p class="max-w-2xl text-lg sm:text-2xl text-neutral-300 leading-relaxed">Construyo APIs y aplicaciones con <strong class="text-white font-medium">.NET y Java</strong>. Me interesa convertir problemas concretos en sistemas claros y mantenibles.</p>
+        <a href="#proyectos-destacados" class="group inline-flex items-center gap-5 font-mono text-xs uppercase tracking-[0.18em] text-lime-300">Ver proyectos <span class="w-11 h-11 border border-lime-300 flex items-center justify-center group-hover:bg-lime-300 group-hover:text-black transition-colors">↓</span></a>
+      </div>
+    </div>
+    <aside class="hidden lg:flex flex-col justify-between border-l border-white/10 p-7">
+      <span class="font-mono text-xs text-neutral-600">PORTFOLIO / 2026</span>
+      <div class="[writing-mode:vertical-rl] rotate-180 font-mono text-xs uppercase tracking-[0.28em] text-neutral-500">Montevideo · Uruguay</div>
+      <div class="space-y-3 font-mono text-xs uppercase tracking-wider">
+        <a href="https://github.com/facumesa" target="_blank" rel="noreferrer" class="block hover:text-lime-300 transition-colors">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/facundomesati/" target="_blank" rel="noreferrer" class="block hover:text-lime-300 transition-colors">LinkedIn ↗</a>
+      </div>
+    </aside>
   </div>
 </header>

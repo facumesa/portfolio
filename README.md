@@ -1,6 +1,12 @@
 # Portfolio de Facundo Mesa
 
-Portfolio personal para presentar mi perfil como desarrollador backend, experiencia, formación y proyectos. Está construido con Astro y Tailwind CSS, con una interfaz oscura y responsive.
+Portfolio personal para presentar mi perfil como desarrollador backend, experiencia, formación y proyectos. Está construido con Astro y Tailwind CSS, con una interfaz responsive, temas claro y oscuro, y animaciones activadas durante el recorrido.
+
+## Sitio publicado
+
+El portfolio está disponible en Vercel:
+
+**[facumesadev-azure.vercel.app](https://facumesadev-azure.vercel.app/)**
 
 ## Contenido
 
@@ -10,6 +16,8 @@ Portfolio personal para presentar mi perfil como desarrollador backend, experien
 - Capturas navegables y ampliables de StellarMinds.
 - Caso de estudio de Proyecto DT, cuyo repositorio permanece privado.
 - Tecnologías, enlaces profesionales y medios de contacto.
+- Selector de tema claro y oscuro con preferencia persistente.
+- Animaciones de entrada que construyen títulos, líneas y secciones durante el desplazamiento.
 
 ## Proyectos presentados
 
@@ -32,7 +40,7 @@ Experimento personal de un modo carrera de director técnico para navegador, cre
 - [Astro](https://astro.build/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - TypeScript para comprobar componentes y scripts
-- HTML Canvas para la animación de fondo
+- Intersection Observer para las animaciones activadas durante el desplazamiento
 
 ## Estructura
 
@@ -53,29 +61,6 @@ portfolio/
 ├── astro.config.mjs
 └── package.json
 ```
-
-## Requisitos
-
-- Node.js 22.12 o superior
-- npm
-
-## Desarrollo local
-
-```bash
-npm install
-npm run dev
-```
-
-Astro inicia normalmente el sitio en `http://localhost:4321`.
-
-## Comandos
-
-| Comando | Descripción |
-| --- | --- |
-| `npm run dev` | Inicia el servidor de desarrollo |
-| `npm run check` | Comprueba archivos Astro y TypeScript |
-| `npm run build` | Genera la versión estática en `dist/` |
-| `npm run preview` | Previsualiza localmente la compilación |
 
 ## Rutas
 

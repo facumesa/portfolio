@@ -1,56 +1,11 @@
 ---
-// DATOS DE TUS PROYECTOS Y EXPERIENCIAS
-const proyectosPrincipales = [
-  {
-    titulo: "StellarMinds",
-    subtitulo: "Plataforma de Gestión Astronómica & AI-Assisted Assessment",
-    descripcion: "Sistema web con arquitectura distribuida en capas, autenticación segura JWT, persistencia relacional con SQL Server / EF Core, contenedorizado en Docker y desplegado en la nube. Integra la API de Google Gemini para la evaluación automatizada de equipamiento astronómico.",
-    tags: [
-      { nombre: ".NET 10", color: "bg-purple-950/60 text-purple-300 border-purple-800/60" },
-      { nombre: "C#", color: "bg-emerald-950/60 text-emerald-300 border-emerald-800/60" },
-      { nombre: "Web API REST", color: "bg-blue-950/60 text-blue-300 border-blue-800/60" },
-      { nombre: "EF Core / SQL", color: "bg-cyan-950/60 text-cyan-300 border-cyan-800/60" },
-      { nombre: "Docker", color: "bg-sky-950/60 text-sky-300 border-sky-800/60" },
-      { nombre: "Gemini API", color: "bg-amber-950/60 text-amber-300 border-amber-800/60" },
-    ],
-    linkGithub: "https://github.com/facumesa/api-rest-cliente-csharp",
-    linkDemo: "https://stellarminds-web.onrender.com",
-    destacado: true,
-  },
-  {
-    titulo: "Sistema de Gestión de Vuelos",
-    subtitulo: "Algoritmos & Tipos de Datos Abstractos de Bajo Nivel",
-    descripcion: "Construcción completa desde cero de estructuras de datos dinámicas (Listas Enlazadas, Pilas y Colas) sin utilizar librerías nativas de Java. Implementa inserciones ordenadas, gestión de ciclos de vida de vuelo y validación de documentos mediante Expresiones Regulares.",
-    tags: [
-      { nombre: "Java", color: "bg-orange-950/60 text-orange-300 border-orange-800/60" },
-      { nombre: "TADs a Mano", color: "bg-teal-950/60 text-teal-300 border-teal-800/60" },
-      { nombre: "Algoritmos O(n)", color: "bg-indigo-950/60 text-indigo-300 border-indigo-800/60" },
-      { nombre: "RegEx", color: "bg-rose-950/60 text-rose-300 border-rose-800/60" },
-    ],
-    linkGithub: "https://github.com/facumesa/javatads",
-    destacado: false,
-  }
-];
-
-const proyectosIA = [
-  {
-    titulo: "DevDock / Personal Developer Toolkit",
-    subtitulo: "AI-Assisted Development & Rapid Prototyping",
-    descripcion: "Aplicación centralizada de recursos y herramientas para desarrolladores. Diseñada y estructurada aplicando flujos de trabajo con modelos de lenguaje (OpenAI Codex), enfocado en la velocidad de prototipado, arquitectura de datos y dirección de producto.",
-    tags: [
-      { nombre: "Codex", color: "bg-teal-950/60 text-teal-300 border-teal-800/60" },
-      { nombre: "Prompt Engineering", color: "bg-pink-950/60 text-pink-300 border-pink-800/60" },
-      { nombre: "AI-Native Workflow", color: "bg-violet-950/60 text-violet-300 border-violet-800/60" },
-    ],
-    linkGithub: "https://github.com/tu-usuario",
-  }
-];
-
-const habilidades = [
-  { categoria: "Backend & Lenguajes", items: [".NET 10", "C#", "Java", "PHP / Laravel", "JavaScript"] },
-  { categoria: "Bases de Datos & Infra", items: ["SQL Server", "Entity Framework", "Docker", "REST APIs", "Git / GitHub"] },
-  { categoria: "Frontend & Tooling", items: ["Tailwind CSS", "Astro", "Vercel", "Render", "Postman / Swagger"] }
-];
+import ImageCarousel from '../components/ImageCarousel.astro';
+import ImageLightbox from '../components/ImageLightbox.astro';
+import Hero from '../components/Hero.astro';
+import Profile from '../components/Profile.astro';
+import ExperienceEducation from '../components/ExperienceEducation.astro';
+import { habilidades, proyectosIA, proyectosPrincipales } from '../data/portfolio';
+import '../styles/global.css';
 ---
 
 <html lang="es" class="scroll-smooth">
@@ -59,8 +14,6 @@ const habilidades = [
     <meta name="viewport" content="width=device-width" />
     <title>Facundo Mesa | Software Developer</title>
     <style>
-      @import "tailwindcss";
-
       /* EFECTO DE DESVANECIMIENTO AL SCROLLEAR */
       @supports (animation-timeline: view()) {
         .sticky-hero {
@@ -77,6 +30,11 @@ const habilidades = [
           }
         }
       }
+
+      dialog::backdrop {
+        background: rgba(0, 0, 0, 0.88);
+        backdrop-filter: blur(8px);
+      }
     </style>
   </head>
   <body class="bg-neutral-950 text-neutral-100 min-h-screen font-sans selection:bg-neutral-800 selection:text-white relative">
@@ -86,49 +44,17 @@ const habilidades = [
 
     <div class="max-w-5xl mx-auto px-6 sm:px-10">
       
-      <!-- HERO SE QUEDA FIJO EN EL FONDO (STICKY) Y SE DESVANECE -->
-      <header class="sticky top-0 h-screen flex flex-col justify-center space-y-8 sticky-hero z-0">
-        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pb-6 border-b border-neutral-800/80">
-          <div class="space-y-3">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-900/90 border border-neutral-800 text-xs font-mono text-neutral-300 backdrop-blur-md">
-              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              Disponible para proyectos & roles backend / full-stack
-            </div>
-            <h1 class="text-6xl sm:text-8xl font-black tracking-tight text-white">
-              Facundo Mesa
-            </h1>
-            <p class="text-2xl sm:text-3xl font-light text-neutral-400">
-              Backend Developer & AI-Assisted Engineer
-            </p>
-          </div>
-
-          <div class="w-28 h-28 sm:w-36 sm:h-36 rounded-3xl bg-gradient-to-br from-neutral-800 to-neutral-900 border border-neutral-700/80 flex items-center justify-center text-4xl sm:text-5xl font-black text-white shadow-2xl shrink-0">
-            FM
-          </div>
-        </div>
-
-        <p class="text-xl sm:text-2xl text-neutral-300 font-light leading-relaxed max-w-3xl">
-          Especializado en la creación de <strong class="text-white font-semibold">APIs REST distribuidas</strong>, arquitectura limpia en <strong class="text-white font-semibold">.NET y Java</strong>, e integración de IA.
-        </p>
-
-        <div class="flex flex-wrap items-center gap-4 pt-4">
-          <a href="#contenido" class="px-6 py-3.5 rounded-xl bg-white text-neutral-950 font-bold hover:bg-neutral-200 transition-all duration-200 shadow-xl shadow-white/5">
-            Ver Proyectos ↓
-          </a>
-          <a href="https://github.com/facumesa" target="_blank" class="px-6 py-3.5 rounded-xl bg-neutral-900/80 text-neutral-200 border border-neutral-800 hover:border-neutral-600 transition-all duration-200">
-            GitHub ↗
-          </a>
-          <a href="https://www.linkedin.com/in/facundomesati/" target="_blank" class="px-6 py-3.5 rounded-xl bg-neutral-900/80 text-neutral-200 border border-neutral-800 hover:border-neutral-600 transition-all duration-200">
-            LinkedIn ↗
-          </a>
-        </div>
-      </header>
+      <Hero />
 
       <!-- CAPA SUPERIOR QUE SE SUPERPONE AL HACER SCROLL (z-10 y background sólido) -->
       <main id="contenido" class="relative z-10 bg-neutral-950 pt-24 pb-32 space-y-32 rounded-t-[3rem] border-t border-neutral-800/80 shadow-[0_-30px_60px_rgba(0,0,0,0.9)] -mx-6 sm:-mx-10 px-6 sm:px-10">
+
+        <Profile />
+
+        <ExperienceEducation />
         
         <!-- SECCIÓN 1: PROYECTOS DESTACADOS -->
-        <section class="space-y-12">
+        <section id="proyectos-destacados" class="space-y-12 scroll-mt-10">
           <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-neutral-800 pb-6">
             <div>
               <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
@@ -162,6 +88,32 @@ const habilidades = [
                   {p.descripcion}
                 </p>
 
+                {p.notaDiseno && (
+                  <div class="mb-8 p-5 rounded-2xl border border-indigo-500/20 bg-indigo-500/5">
+                    <p class="text-xs font-mono uppercase tracking-widest text-indigo-300 mb-2">Nota sobre la interfaz</p>
+                    <p class="text-sm text-neutral-400 leading-relaxed">{p.notaDiseno}</p>
+                  </div>
+                )}
+
+                {p.capturas && (
+                  <div class="mb-8"><ImageCarousel images={p.capturas} label="Capturas del sistema" /></div>
+                )}
+
+                {p.flujo && (
+                  <div class="mb-8 p-6 rounded-2xl border border-neutral-800 bg-neutral-950/70">
+                    <p class="text-xs font-mono uppercase tracking-widest text-neutral-500 mb-5">Flujo principal del sistema</p>
+                    <ol class="grid sm:grid-cols-4 gap-3">
+                      {p.flujo.map((paso, index) => (
+                        <li class="relative p-4 rounded-xl border border-neutral-800 bg-neutral-900 text-sm text-neutral-300">
+                          <span class="block text-xs font-mono text-indigo-300 mb-2">0{index + 1}</span>
+                          {paso}
+                        </li>
+                      ))}
+                    </ol>
+                    <p class="text-sm text-neutral-500 leading-relaxed mt-5">Las listas enlazadas mantienen los vuelos ordenados; pilas y colas modelan operaciones y estados sin recurrir a las colecciones nativas de Java.</p>
+                  </div>
+                )}
+
                 <div class="flex flex-wrap gap-2.5 mb-8">
                   {p.tags.map(tag => (
                     <span class={`px-3 py-1.5 text-xs font-mono font-medium rounded-lg border ${tag.color}`}>
@@ -190,15 +142,15 @@ const habilidades = [
           </div>
         </section>
 
-        <!-- SECCIÓN 2: PROYECTOS AI-ASSISTED -->
+        <!-- SECCIÓN 2: PROYECTOS PERSONALES ASISTIDOS POR IA -->
         <section class="space-y-12">
           <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-neutral-800 pb-6">
             <div>
               <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-                AI-Assisted & Rapid Prototyping
+                Proyectos Personales con IA
               </h2>
               <p class="text-base text-neutral-400 mt-2">
-                Dirección de producto, Prompt Engineering técnico y aceleración con LLMs.
+                Experimentos creados mediante prompts y asistencia intensiva de IA, separados de mi experiencia técnica principal.
               </p>
             </div>
             <span class="text-xs font-mono text-neutral-500">02 / 03</span>
@@ -206,8 +158,8 @@ const habilidades = [
 
           <div class="grid grid-cols-1 gap-8">
             {proyectosIA.map(p => (
-              <article class="p-8 sm:p-10 rounded-3xl bg-neutral-900/40 border border-neutral-800/60 hover:border-neutral-700 transition-all duration-300">
-                <h3 class="text-2xl font-bold text-white mb-2">{p.titulo}</h3>
+              <article class="group relative p-8 sm:p-10 rounded-3xl bg-neutral-900/40 border border-neutral-800/60 hover:border-neutral-600 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 backdrop-blur-md">
+                <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-indigo-300 transition-colors">{p.titulo}</h3>
                 <p class="text-xs font-mono text-neutral-500 mb-4">{p.subtitulo}</p>
                 <p class="text-base text-neutral-400 font-light leading-relaxed mb-6">{p.descripcion}</p>
                 
@@ -217,6 +169,13 @@ const habilidades = [
                       {tag.nombre}
                     </span>
                   ))}
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-neutral-800/80">
+                  <a href={p.linkShowcase} class="text-sm font-semibold text-neutral-300 hover:text-white transition-colors inline-flex items-center gap-2 group/link">
+                    <span>Ver caso de estudio</span>
+                    <span class="group-hover/link:translate-x-1 transition-transform">→</span>
+                  </a>
                 </div>
               </article>
             ))}
@@ -265,14 +224,32 @@ const habilidades = [
       </main>
 
     </div>
-	<!-- CANVAS DE FONDO COMPLETO -->
+<ImageLightbox />
+
 <canvas id="equalizer-canvas" class="fixed inset-0 pointer-events-none -z-10 opacity-20"></canvas>
 
 <script>
-  const canvas = document.getElementById('equalizer-canvas');
-  const ctx = canvas.getContext('2d');
+  function getEqualizerCanvas(): HTMLCanvasElement {
+    const element = document.getElementById('equalizer-canvas');
+    if (!(element instanceof HTMLCanvasElement)) {
+      throw new Error('No se encontró el canvas del ecualizador.');
+    }
+    return element;
+  }
 
-  let width, height;
+  function getCanvasContext(canvas: HTMLCanvasElement): CanvasRenderingContext2D {
+    const context = canvas.getContext('2d');
+    if (!context) {
+      throw new Error('No se pudo inicializar el contexto 2D del canvas.');
+    }
+    return context;
+  }
+
+  const canvas = getEqualizerCanvas();
+  const ctx = getCanvasContext(canvas);
+
+  let width = 0;
+  let height = 0;
   let mouse = { x: -1000, y: -1000 };
 
   // --- CONFIGURACIÓN DE TAMAÑO GRANDE ---
@@ -282,7 +259,15 @@ const habilidades = [
   const MIN_HEIGHT = 40;         // Altura mínima fija de reposo
   const CORNER_RADIUS = 8;       // Bordes ligeramente redondeados estilo card
 
-  let bars = [];
+  type EqualizerBar = {
+    x: number;
+    currentHeight: number;
+    targetHeight: number;
+    phase: number;
+    speed: number;
+  };
+
+  let bars: EqualizerBar[] = [];
 
   function resize() {
     width = canvas.width = window.innerWidth;

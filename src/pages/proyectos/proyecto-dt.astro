@@ -1,0 +1,175 @@
+---
+import ImageCarousel from '../../components/ImageCarousel.astro';
+import ImageLightbox from '../../components/ImageLightbox.astro';
+import '../../styles/global.css';
+
+const funcionalidades = [
+  "Creación de entrenador y carreras locales independientes",
+  "Gestón de plantel, formaciones, roles e instrucciones tácticas",
+  "Calendario, temporadas, competiciones, lesiones y disciplina",
+  "Partidos con relato, estadísticas y ajustes tácticos en vivo",
+  "Economía, contratos, negociaciones y mercado de transferencias",
+  "Persistencia de la carrera y exportación de partidas mediante código",
+];
+
+const tecnologias = ["React 19", "TypeScript", "Vite", "PixiJS", "SQLite"];
+
+const capturas = [
+  { src: "/img/proyecto-dt/pagina-principal.png", alt: "Página principal de Proyecto DT", title: "Punto de partida", description: "Acceso a carrera, partido rápido y herramientas del mundo futbolístico." },
+  { src: "/img/proyecto-dt/creacion-entrenador.png", alt: "Creación del entrenador en Proyecto DT", title: "Identidad del entrenador", description: "Creación del perfil que acompañará toda la trayectoria." },
+  { src: "/img/proyecto-dt/formacion-tactica.png", alt: "Preparación de la formación táctica en Proyecto DT", title: "Preparación táctica", description: "Selección de formación, titulares, banco e instrucciones previas al partido." },
+  { src: "/img/proyecto-dt/pantalla-partido.png", alt: "Partido en vivo dentro de Proyecto DT", title: "Partido en vivo", description: "Simulación visual continua con marcador, estadísticas y decisiones tácticas." },
+];
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Caso de estudio de Proyecto DT, un modo carrera de director técnico creado como proyecto personal con asistencia intensiva de IA." />
+    <title>Proyecto DT (nombre por definir) | Facundo Mesa</title>
+    <style>
+      dialog::backdrop {
+        background: rgba(0, 0, 0, 0.88);
+        backdrop-filter: blur(8px);
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-neutral-950 text-neutral-100 font-sans selection:bg-indigo-500/30">
+    <div class="fixed inset-x-0 top-0 h-96 bg-gradient-to-b from-indigo-600/15 via-violet-600/5 to-transparent pointer-events-none"></div>
+
+    <main class="relative max-w-4xl mx-auto px-6 sm:px-10 py-12 sm:py-20">
+      <a href="/" class="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors mb-16">
+        <span aria-hidden="true">←</span>
+        Volver al portfolio
+      </a>
+
+      <header class="space-y-8 pb-16 border-b border-neutral-800">
+        <div class="flex flex-wrap gap-3">
+          <span class="px-3 py-1.5 rounded-full border border-violet-500/30 bg-violet-500/10 text-xs font-mono text-violet-300">
+            Proyecto personal con IA
+          </span>
+          <span class="px-3 py-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 text-xs font-mono text-amber-300">
+            En desarrollo
+          </span>
+          <span class="px-3 py-1.5 rounded-full border border-neutral-700 bg-neutral-900 text-xs font-mono text-neutral-400">
+            Repositorio privado
+          </span>
+        </div>
+
+        <div>
+          <p class="font-mono text-sm text-indigo-300 mb-4">CASO DE ESTUDIO</p>
+          <h1 class="text-5xl sm:text-7xl font-black tracking-tight text-white">Proyecto DT</h1>
+          <p class="text-xl sm:text-2xl text-neutral-500 mt-3">Nombre por definir</p>
+        </div>
+
+        <p class="text-xl sm:text-2xl leading-relaxed font-light text-neutral-300 max-w-3xl">
+          Un modo carrera de director técnico para navegador, pensado para desarrollar una trayectoria de varias temporadas dentro de un mundo futbolístico persistente.
+        </p>
+      </header>
+
+      <div class="py-16 space-y-20">
+        <section class="grid md:grid-cols-[1fr_2fr] gap-8">
+          <h2 class="text-sm font-mono uppercase tracking-widest text-neutral-500">Transparencia</h2>
+          <div class="space-y-5 text-lg leading-relaxed text-neutral-300 font-light">
+            <p>
+              Este proyecto fue creado mediante prompts y asistencia intensiva de inteligencia artificial. Mi participación se concentra en imaginar el producto, definir funcionalidades, tomar decisiones sobre la experiencia y probar cada iteración.
+            </p>
+            <p>
+              El código incorpora tecnologías, patrones y soluciones cuyo funcionamiento todavía estoy aprendiendo. Por eso lo presento como un experimento personal asistido por IA y no como evidencia de dominio profesional de todo su stack.
+            </p>
+          </div>
+        </section>
+
+        <section class="grid md:grid-cols-[1fr_2fr] gap-8">
+          <h2 class="text-sm font-mono uppercase tracking-widest text-neutral-500">La idea</h2>
+          <div class="space-y-5 text-lg leading-relaxed text-neutral-300 font-light">
+            <p>
+              La meta es construir una carrera larga y coherente: comenzar en un club modesto, preparar partidos, gestionar el plantel, competir durante varias temporadas y progresar hacia clubes de mayor nivel o selecciones.
+            </p>
+            <p>
+              Las decisiones tácticas, los atributos, la posición, el cansancio y la moral alimentan un motor de partido. Sus consecuencias permanecen en la carrera y hacen avanzar el calendario del mundo.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <div class="flex items-end justify-between gap-4 pb-5 border-b border-neutral-800 mb-8">
+            <h2 class="text-3xl font-bold text-white">Alcance actual</h2>
+            <span class="text-xs font-mono text-neutral-600">PROTOTIPO JUGABLE</span>
+          </div>
+          <ul class="grid sm:grid-cols-2 gap-4">
+            {funcionalidades.map((funcionalidad) => (
+              <li class="p-5 rounded-2xl border border-neutral-800 bg-neutral-900/60 text-neutral-300 leading-relaxed">
+                <span class="block w-2 h-2 rounded-full bg-indigo-400 mb-4"></span>
+                {funcionalidad}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section>
+          <div class="flex items-end justify-between gap-4 pb-5 border-b border-neutral-800 mb-8">
+            <div>
+              <p class="text-xs font-mono uppercase tracking-widest text-neutral-500 mb-3">Vista del proyecto</p>
+              <h2 class="text-3xl font-bold text-white">Del vestuario a la cancha</h2>
+            </div>
+            <span class="hidden sm:block text-xs font-mono text-neutral-600">4 CAPTURAS</span>
+          </div>
+
+          <ImageCarousel images={capturas} />
+        </section>
+
+        <section class="rounded-3xl border border-neutral-800 bg-neutral-900/50 p-8 sm:p-10">
+          <p class="text-sm font-mono uppercase tracking-widest text-neutral-500 mb-5">Tecnologías utilizadas</p>
+          <div class="flex flex-wrap gap-3">
+            {tecnologias.map((tecnologia) => (
+              <span class="px-4 py-2 rounded-xl border border-neutral-700 bg-neutral-950 text-sm font-mono text-neutral-300">
+                {tecnologia}
+              </span>
+            ))}
+          </div>
+          <p class="text-sm text-neutral-500 leading-relaxed mt-7">
+            Estas tecnologías describen el proyecto; no representan por sí solas mi nivel de dominio individual sobre cada una.
+          </p>
+        </section>
+
+        <section class="grid md:grid-cols-[1fr_2fr] gap-8">
+          <h2 class="text-sm font-mono uppercase tracking-widest text-neutral-500">Estado y acceso</h2>
+          <div class="space-y-5 text-lg leading-relaxed text-neutral-300 font-light">
+            <p>
+              Actualmente se ejecuta de forma local mediante <code class="px-2 py-1 rounded bg-neutral-900 text-sm font-mono text-indigo-300">npm run dev</code>. No dispone de una demo pública y el repositorio se mantiene privado.
+            </p>
+            <p>
+              Esta decisión permite evitar la redistribución directa de datos, imágenes y marcas de terceros incluidos durante el desarrollo, y mantener reservado un código experimental que todavía cambia con frecuencia. El proyecto puede mostrarse y probarse de forma coordinada al solicitarlo.
+            </p>
+            <p>
+              El proyecto utiliza nombres, marcas, imágenes y datos vinculados al mundo del fútbol. Es independiente y no está afiliado, patrocinado ni respaldado por clubes, ligas, federaciones, Transfermarkt, EA Sports o FIFA. Los derechos pertenecen a sus respectivos titulares.
+            </p>
+          </div>
+        </section>
+
+        <section class="rounded-3xl border border-indigo-500/30 bg-gradient-to-br from-indigo-500/15 via-neutral-900 to-neutral-900 p-8 sm:p-10">
+          <p class="text-sm font-mono uppercase tracking-widest text-indigo-300 mb-4">Disponible para mostrar</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-5">¿Querés verlo funcionando?</h2>
+          <p class="text-lg text-neutral-300 font-light leading-relaxed max-w-2xl mb-8">
+            Aunque el repositorio y la demo no son públicos, puedo mostrar el proyecto en funcionamiento, explicar el proceso de creación y compartir más detalles a quien tenga interés.
+          </p>
+          <a href="https://www.linkedin.com/in/facundomesati/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white text-neutral-950 font-bold hover:bg-neutral-200 transition-colors">
+            Contactarme por LinkedIn
+            <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" class="w-4 h-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 14 14 6M8 6h6v6" />
+            </svg>
+          </a>
+        </section>
+      </div>
+
+      <footer class="pt-10 border-t border-neutral-800 flex flex-col sm:flex-row justify-between gap-4 text-sm font-mono text-neutral-500">
+        <span>© 2026 Facundo Mesa</span>
+        <a href="/" class="hover:text-white transition-colors">Volver al portfolio ↑</a>
+      </footer>
+    </main>
+
+    <ImageLightbox />
+  </body>
+</html>

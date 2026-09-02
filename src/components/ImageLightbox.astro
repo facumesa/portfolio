@@ -1,0 +1,36 @@
+<dialog data-image-lightbox class="m-auto w-[min(94vw,1500px)] max-w-none max-h-none overflow-visible p-0 border-0 bg-transparent text-white">
+  <div class="relative">
+    <img data-lightbox-image src="" alt="" class="max-h-[88vh] w-full object-contain rounded-2xl border border-neutral-700 bg-neutral-950" />
+    <form method="dialog" class="absolute top-3 right-3">
+      <button type="submit" aria-label="Cerrar imagen ampliada" class="w-10 h-10 rounded-full bg-neutral-950/90 border border-neutral-700 text-neutral-300 hover:text-white inline-flex items-center justify-center backdrop-blur-md">
+        <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" class="w-4 h-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="m5 5 10 10M15 5 5 15" /></svg>
+      </button>
+    </form>
+  </div>
+</dialog>
+
+<style is:global>
+  dialog::backdrop { background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(8px); }
+</style>
+
+<script>
+  const lightbox = document.querySelector<HTMLDialogElement>('[data-image-lightbox]');
+  const lightboxImage = lightbox?.querySelector<HTMLImageElement>('[data-lightbox-image]');
+  if (lightbox && lightboxImage) {
+    document.querySelectorAll<HTMLButtonElement>('[data-lightbox-src]').forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        lightboxImage.src = trigger.dataset.lightboxSrc ?? '';
+        lightboxImage.alt = trigger.dataset.lightboxAlt ?? '';
+        document.documentElement.style.overflow = 'hidden';
+        lightbox.showModal();
+      });
+    });
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) lightbox.close();
+    });
+    lightbox.addEventListener('close', () => {
+      document.documentElement.style.overflow = '';
+      lightboxImage.src = '';
+    });
+  }
+</script>

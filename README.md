@@ -1,43 +1,91 @@
-# Astro Starter Kit: Minimal
+# Portfolio de Facundo Mesa
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Portfolio personal para presentar mi perfil como desarrollador backend, experiencia, formación y proyectos. Está construido con Astro y Tailwind CSS, con una interfaz oscura y responsive.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Contenido
 
-## 🚀 Project Structure
+- Perfil profesional, experiencia y formación.
+- Proyectos técnicos destacados.
+- Sección diferenciada para proyectos personales creados con asistencia intensiva de IA.
+- Capturas navegables y ampliables de StellarMinds.
+- Caso de estudio de Proyecto DT, cuyo repositorio permanece privado.
+- Tecnologías, enlaces profesionales y medios de contacto.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Proyectos presentados
+
+### StellarMinds
+
+Sistema de gestión astronómica desarrollado con .NET, C#, Entity Framework Core, SQL Server y Docker. Incluye autenticación JWT e integración con Google Gemini para evaluar combinaciones de equipamiento.
+
+La estructura y el diseño visual de su interfaz fueron realizados con asistencia de IA para preparar una presentación más cuidada. Esta asistencia se limitó al aspecto visual y se declara expresamente dentro del portfolio.
+
+### Sistema de Gestión de Vuelos
+
+Proyecto en Java centrado en algoritmos y tipos de datos abstractos implementados desde cero: listas enlazadas, pilas, colas, inserciones ordenadas y validaciones con expresiones regulares.
+
+### Proyecto DT (nombre por definir)
+
+Experimento personal de un modo carrera de director técnico para navegador, creado mediante prompts y asistencia intensiva de IA. El portfolio incluye un caso de estudio que explica el alcance, mi participación y las razones por las que su repositorio se mantiene privado.
+
+## Tecnologías del portfolio
+
+- [Astro](https://astro.build/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- TypeScript para comprobar componentes y scripts
+- HTML Canvas para la animación de fondo
+
+## Estructura
 
 ```text
-/
+portfolio/
 ├── public/
+│   ├── img/                  capturas de los proyectos
+│   └── favicon.*
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── components/           componentes reutilizables
+│   ├── data/                 contenido estructurado
+│   ├── pages/
+│   │   ├── index.astro
+│   │   └── proyectos/
+│   │       └── proyecto-dt.astro
+│   └── styles/
+│       └── global.css
+├── astro.config.mjs
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Requisitos
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- Node.js 22.12 o superior
+- npm
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Desarrollo local
 
-## 🧞 Commands
+```bash
+npm install
+npm run dev
+```
 
-All commands are run from the root of the project, from a terminal:
+Astro inicia normalmente el sitio en `http://localhost:4321`.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Comandos
 
-## 👀 Want to learn more?
+| Comando | Descripción |
+| --- | --- |
+| `npm run dev` | Inicia el servidor de desarrollo |
+| `npm run check` | Comprueba archivos Astro y TypeScript |
+| `npm run build` | Genera la versión estática en `dist/` |
+| `npm run preview` | Previsualiza localmente la compilación |
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Rutas
+
+- `/`: portfolio principal.
+- `/proyectos/proyecto-dt`: caso de estudio de Proyecto DT.
+
+## Autor
+
+**Facundo Mesa** — Montevideo, Uruguay
+
+- [GitHub](https://github.com/facumesa)
+- [LinkedIn](https://www.linkedin.com/in/facundomesati/)
+- [facundomesababon@gmail.com](mailto:facundomesababon@gmail.com)

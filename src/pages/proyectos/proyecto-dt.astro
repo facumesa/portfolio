@@ -1,6 +1,7 @@
 ---
 import ImageCarousel from '../../components/ImageCarousel.astro';
 import ImageLightbox from '../../components/ImageLightbox.astro';
+import ThemeToggle from '../../components/ThemeToggle.astro';
 import '../../styles/global.css';
 
 const funcionalidades = [
@@ -22,10 +23,11 @@ const capturas = [
 ];
 ---
 
-<html lang="es">
+<html lang="es" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
+    <script is:inline>try{const theme=localStorage.getItem('portfolio-theme');if(theme==='light')document.documentElement.dataset.theme='light'}catch{}</script>
     <meta name="description" content="Caso de estudio de Proyecto DT, un modo carrera de director técnico creado como proyecto personal con asistencia intensiva de IA." />
     <title>Proyecto DT (nombre por definir) | Facundo Mesa</title>
     <style>
@@ -37,10 +39,13 @@ const capturas = [
   </head>
   <body class="min-h-screen text-neutral-100 font-sans">
     <main class="relative max-w-6xl mx-auto px-4 sm:px-8 py-8 sm:py-14">
-      <a href="/" class="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors mb-16">
-        <span aria-hidden="true">←</span>
-        Volver al portfolio
-      </a>
+      <div class="flex items-center justify-between mb-16">
+        <a href="/" class="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors">
+          <span aria-hidden="true">←</span>
+          Volver al portfolio
+        </a>
+        <ThemeToggle />
+      </div>
 
       <header class="grid lg:grid-cols-[220px_1fr] gap-10 py-16 sm:py-24 border-y border-white/10">
         <div class="flex lg:flex-col flex-wrap gap-3 content-start">

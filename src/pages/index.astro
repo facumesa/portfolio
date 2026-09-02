@@ -4,14 +4,16 @@ import ImageLightbox from '../components/ImageLightbox.astro';
 import Hero from '../components/Hero.astro';
 import Profile from '../components/Profile.astro';
 import ExperienceEducation from '../components/ExperienceEducation.astro';
+import RevealMotion from '../components/RevealMotion.astro';
 import { habilidades, proyectosIA, proyectosPrincipales } from '../data/portfolio';
 import '../styles/global.css';
 ---
 
-<html lang="es" class="scroll-smooth">
+<html lang="es" class="scroll-smooth" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
+    <script is:inline>try{const theme=localStorage.getItem('portfolio-theme');if(theme==='light')document.documentElement.dataset.theme='light'}catch{}</script>
     <title>Facundo Mesa | Software Developer</title>
   </head>
   <body class="min-h-screen text-neutral-100 font-sans overflow-x-hidden">
@@ -27,11 +29,11 @@ import '../styles/global.css';
         <ExperienceEducation />
         
         <!-- SECCIÓN 1: PROYECTOS DESTACADOS -->
-        <section id="proyectos-destacados" class="space-y-12 scroll-mt-10 border-x border-b border-white/10 px-5 py-16 sm:p-10 lg:p-16">
+        <section id="proyectos-destacados" data-reveal="section" class="space-y-12 scroll-mt-10 border-x border-b border-white/10 px-5 py-16 sm:p-10 lg:p-16">
           <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-6">
             <div>
               <p class="section-kicker mb-4">03 / Trabajo</p>
-              <h2 class="text-4xl sm:text-6xl font-black uppercase tracking-[-0.05em] text-white">
+              <h2 data-reveal="title" class="text-4xl sm:text-6xl font-black uppercase tracking-[-0.05em] text-white">
                 Proyectos Destacados
               </h2>
               <p class="text-base text-neutral-400 mt-2">
@@ -42,8 +44,8 @@ import '../styles/global.css';
           </div>
 
           <div class="grid grid-cols-1 gap-10">
-            {proyectosPrincipales.map(p => (
-              <article class="group relative p-8 sm:p-10 bg-[#0c0f0d] border border-white/10 hover:border-lime-300/60 transition-all duration-500 hover:-translate-y-1 hover:shadow-[8px_8px_0_0_rgba(217,255,87,0.12)]">
+            {proyectosPrincipales.map((p, index) => (
+              <article data-reveal="card" style={`--reveal-delay: ${index * 90}ms`} class="group relative p-8 sm:p-10 bg-[#0c0f0d] border border-white/10 hover:border-lime-300/60 transition-all duration-500 hover:-translate-y-1 hover:shadow-[8px_8px_0_0_rgba(217,255,87,0.12)]">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
                   <div>
                     <h3 class="text-2xl sm:text-3xl font-bold text-white group-hover:text-lime-300 transition-colors">
@@ -117,11 +119,11 @@ import '../styles/global.css';
         </section>
 
         <!-- SECCIÓN 2: PROYECTOS PERSONALES ASISTIDOS POR IA -->
-        <section class="space-y-12 border-x border-b border-white/10 px-5 py-16 sm:p-10 lg:p-16">
+        <section data-reveal="section" class="space-y-12 border-x border-b border-white/10 px-5 py-16 sm:p-10 lg:p-16">
           <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-6">
             <div>
               <p class="section-kicker mb-4">04 / Laboratorio IA</p>
-              <h2 class="text-4xl sm:text-6xl font-black uppercase tracking-[-0.05em] text-white">
+              <h2 data-reveal="title" class="text-4xl sm:text-6xl font-black uppercase tracking-[-0.05em] text-white">
                 Proyectos Personales con IA
               </h2>
               <p class="text-base text-neutral-400 mt-2">
@@ -132,8 +134,8 @@ import '../styles/global.css';
           </div>
 
           <div class="grid grid-cols-1 gap-8">
-            {proyectosIA.map(p => (
-              <article class="group relative p-8 sm:p-10 bg-[#0c0f0d] border border-white/10 hover:border-lime-300/60 transition-all duration-500 hover:-translate-y-1 hover:shadow-[8px_8px_0_0_rgba(217,255,87,0.12)]">
+            {proyectosIA.map((p, index) => (
+              <article data-reveal="card" style={`--reveal-delay: ${index * 90}ms`} class="group relative p-8 sm:p-10 bg-[#0c0f0d] border border-white/10 hover:border-lime-300/60 transition-all duration-500 hover:-translate-y-1 hover:shadow-[8px_8px_0_0_rgba(217,255,87,0.12)]">
                 <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-lime-300 transition-colors">{p.titulo}</h3>
                 <p class="text-xs font-mono text-neutral-500 mb-4">{p.subtitulo}</p>
                 <p class="text-base text-neutral-400 font-light leading-relaxed mb-6">{p.descripcion}</p>
@@ -158,11 +160,11 @@ import '../styles/global.css';
         </section>
 
         <!-- SECCIÓN 3: TECH STACK Y HABILIDADES -->
-        <section class="space-y-12 border-x border-b border-white/10 px-5 py-16 sm:p-10 lg:p-16">
+        <section data-reveal="section" class="space-y-12 border-x border-b border-white/10 px-5 py-16 sm:p-10 lg:p-16">
           <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-6">
             <div>
               <p class="section-kicker mb-4">05 / Stack</p>
-              <h2 class="text-4xl sm:text-6xl font-black uppercase tracking-[-0.05em] text-white">
+              <h2 data-reveal="title" class="text-4xl sm:text-6xl font-black uppercase tracking-[-0.05em] text-white">
                 Habilidades & Tecnologías
               </h2>
               <p class="text-base text-neutral-400 mt-2">
@@ -173,8 +175,8 @@ import '../styles/global.css';
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {habilidades.map(group => (
-              <div class="p-6 border-t border-white/15 space-y-5">
+            {habilidades.map((group, index) => (
+              <div data-reveal="content" style={`--reveal-delay: ${index * 90}ms`} class="p-6 border-t border-white/15 space-y-5">
                 <h3 class="text-xs font-mono text-lime-300 uppercase tracking-[0.16em]">{group.categoria}</h3>
                 <ul class="space-y-2">
                   {group.items.map(item => (
@@ -201,5 +203,6 @@ import '../styles/global.css';
 
     </div>
 <ImageLightbox />
+<RevealMotion />
   </body>
 </html>

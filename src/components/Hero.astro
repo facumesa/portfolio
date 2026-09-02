@@ -1,23 +1,28 @@
-<header class="min-h-[92vh] flex flex-col border-x border-white/10">
+---
+import ThemeToggle from './ThemeToggle.astro';
+---
+
+<header data-reveal="section" class="min-h-[92vh] flex flex-col border-x border-white/10">
   <nav class="h-16 px-5 sm:px-8 flex items-center justify-between border-b border-white/10 font-mono text-xs uppercase tracking-[0.18em]">
     <a href="/" class="text-white font-bold">FM<span class="text-lime-300">.</span></a>
     <div class="flex items-center gap-5 sm:gap-8 text-neutral-500">
       <a href="#sobre-mi" class="hover:text-lime-300 transition-colors">Perfil</a>
       <a href="#proyectos-destacados" class="hover:text-lime-300 transition-colors">Trabajo</a>
       <a href="mailto:facundomesababon@gmail.com" class="hidden sm:inline hover:text-lime-300 transition-colors">Contacto</a>
+      <ThemeToggle />
     </div>
   </nav>
   <div class="flex-1 grid lg:grid-cols-[1fr_280px]">
     <div class="px-5 sm:px-8 py-16 sm:py-24 flex flex-col justify-between gap-20">
-      <div class="flex items-center gap-3 font-mono text-[0.65rem] sm:text-xs uppercase tracking-[0.16em] text-neutral-400">
+      <div data-reveal="content" class="flex items-center gap-3 font-mono text-[0.65rem] sm:text-xs uppercase tracking-[0.16em] text-neutral-400">
         <span class="w-2 h-2 bg-lime-300"></span>
         Disponible para roles backend / full-stack
       </div>
       <div>
-        <p class="font-mono text-xs sm:text-sm uppercase tracking-[0.24em] text-lime-300 mb-6">Programador de aplicaciones</p>
-        <h1 class="text-[clamp(4rem,12vw,9rem)] leading-[0.82] font-black uppercase tracking-[-0.075em] text-white">Facundo<br /><span class="text-outline">Mesa</span></h1>
+        <p data-reveal="content" class="font-mono text-xs sm:text-sm uppercase tracking-[0.24em] text-lime-300 mb-6">Programador de aplicaciones</p>
+        <h1 data-reveal="title" style="--reveal-delay: 100ms" class="text-[clamp(4rem,12vw,9rem)] leading-[0.82] font-black uppercase tracking-[-0.075em] text-white">Facundo<br /><span class="text-outline">Mesa</span></h1>
       </div>
-      <div class="grid md:grid-cols-[1fr_auto] gap-8 items-end border-t border-white/10 pt-8">
+      <div data-reveal="content" style="--reveal-delay: 180ms" class="grid md:grid-cols-[1fr_auto] gap-8 items-end border-t border-white/10 pt-8">
         <p class="max-w-2xl text-lg sm:text-2xl text-neutral-300 leading-relaxed">Construyo APIs y aplicaciones con <strong class="text-white font-medium">.NET y Java</strong>. Me interesa convertir problemas concretos en sistemas claros y mantenibles.</p>
         <a href="#proyectos-destacados" class="group inline-flex items-center gap-5 font-mono text-xs uppercase tracking-[0.18em] text-lime-300">Ver proyectos <span class="w-11 h-11 border border-lime-300 flex items-center justify-center group-hover:bg-lime-300 group-hover:text-black transition-colors">↓</span></a>
       </div>
